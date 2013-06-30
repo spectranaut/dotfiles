@@ -41,14 +41,9 @@ main = do
       [ ((0          , xK_Print), spawn "scrot -e 'mv $f ~/Pictures/Captures/'")
       , ((controlMask, xK_Print), spawn "scrot -u -e 'mv $f ~/Pictures/Captures/'")
 -- the following are for common things that I want to do in a terminal
-      , ((mod4Mask .|. shiftMask, xK_m  ), spawnterm "evenless")
-      , ((mod4Mask .|. shiftMask, xK_F11), spawnterm "emacsclient -nw /home/george/.xmonad/xmonad.hs")
-      , ((mod4Mask .|. shiftMask, xK_e  ), spawnterm "emacsclient -nw -e \"(list (eshell \\\"new\\\") (delete-other-windows))\"")
       , ((mod4Mask .|. shiftMask, xK_r  ), spawnterm "sudo -s")
 -- applications
       , ((mod4Mask .|. controlMask, xK_f), spawn "firefox")
-      , ((mod4Mask .|. controlMask, xK_t), spawn "liferea")
-      , ((mod4Mask .|. controlMask, xK_p), spawn "zathura")
 -- lock screen
       , ((mod4Mask, xK_x), spawn "xscreensaver-command --lock")
 -- switch between workspaces with mod-arrow
