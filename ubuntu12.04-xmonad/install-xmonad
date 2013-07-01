@@ -1,0 +1,25 @@
+#!/bin/bash
+# 
+# Installation script which setup up an Ubuntu Precise machine to use this
+# xmonad configuration.  
+#
+# Based off script by David Brewer
+# visit the repository for more information: 
+# https://github.com/davidbrewer/xmonad-ubuntu-conf
+
+echo "Installing required packages..."
+sudo apt-get install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen moreutils synapse ssh-askpass-gnome thunar terminator remmina trayer feh dmenu xfce4-terminal
+
+echo "Creating xmonad xsession configuration..."
+sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
+sudo cp ~/.xmonad/xmonad.desktop /usr/share/xsessions
+sudo cp ~/.xmonad/images/custom_xmonad_badge.png /usr/share/unity-greeter
+
+echo "Linking to customized gnome 2 configuration..."
+mv ~/.gtkrc-2.0 ~/gtkrc-2.0.original
+ln -s .xmonad/.gtkrc-2.0 ~/.gtkrc-2.0
+
+echo "Adding color theme to xfce-terminal..."
+mkdir ~/.config
+mkdir ~/.config/Terminal
+mv ~/.xmonad/terminalrc ~/.config/Terminal/
