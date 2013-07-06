@@ -21,28 +21,19 @@
 ;; (visual-line-mode 1)
 (global-visual-line-mode t)
 
-;; MACOSX - automaticly load slightly better theme for 
-;; sliver terminal
+;; automaticly load slightly better theme for macosx emacs
 ;; to disable theme, 'meta-x disable-theme'
 ;; (load-theme 'tsdh-light' t)
 
-;; add new theme directory
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; automatically delete *Completions* buffers
+(defun delete-completion-window-buffer (&optional output)                                                                
+  (interactive)                                                                                                
+  (dolist (win (window-list))                                                                                  
+    (when (string= (buffer-name (window-buffer win)) "*Completions*")                                          
+      (delete-window win)                                                                                      
+      (kill-buffer "*Completions*")))                                                                          
+  output)                                                                                                      
+
+(add-hook 'comint-preoutput-filter-functions 'delete-completion-window-buffer)
 
 
-;; Color themes? not good for gui-less emacs
-
-;;(load-theme 'noctilux t)
-;;(load-theme 'solarized-dark t)
