@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.5
+Encoding=UTF-8
+Name=DarkArts
+Type=X-GNOME-Metatheme
+Comment[en_GB]=Created Oleg Balandin
+Comment[ru]=Тема создана Олегом Баландиным
+Name[en_GB]=DarkArts
+Name[ru]=Темное исскуство
+
+[X-GNOME-Metatheme]
+GtkTheme=DarkArts
+MetacityTheme=DarkArts
+IconTheme=DarkArts
+CursorTheme=Point-Chrome

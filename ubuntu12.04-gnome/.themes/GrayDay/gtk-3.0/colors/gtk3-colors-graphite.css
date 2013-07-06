@@ -1,0 +1,30 @@
+/***********************************************
+	gtk3-colors-graphite.css
+************************************************/
+
+/* Global back color selected items (menu for example) */
+/* In most cases, this would be the only color that would have to change */
+@define-color theme_selected_bg_color #6d6d6d;
+/* IMPORTANT: 
+   this color above must be specified in the file /GrayDay/gtk-3.0/settings.ini
+   in the form:
+   gtk-color-scheme = "selected_bg_color:#XXXXXX"
+   where #XXXXXX is the value assigned to theme_selected_bg_color
+*/
+
+/* Global text color selected items (normally white)  */
+@define-color theme_selected_fg_color #ffffff;
+
+/* Back color row-item selected (nautilus row for example)    */
+/* Experiment with values ​​between 1.00 (dark) and 2.00(light) */
+@define-color row_selected_bg_color shade(@theme_selected_bg_color, 1.90);
+/* Text color row-item selected */
+@define-color row_selected_fg_color #080808;
+
+/* Text-box Back color text selected*/
+@define-color entry_text_selected shade(@theme_selected_bg_color, 1.90);
+/* Text-box Text color */
+@define-color entry_text_color #080808;
+
+
+

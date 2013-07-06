@@ -1,0 +1,624 @@
+# DarkArts v. 1.5 - Gtk theme, powered by Murrine
+# Copyright (C) 2011, Oleg Balandin
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see http://www.gnu.org/licenses/.
+
+# Includes
+
+include "nautilus.rc"
+include "banshee.rc"
+include "ff.rc"
+include "chromium.rc"
+include "ubuntuone.rc"
+include "gnome-panel.rc"
+include "gnome-terminal.rc"
+
+gtk_color_scheme	= "fg_color: #D7D7D7;bg_color: #010101;text_color: #D7D7D7;base_color: #1F1F1F;selected_fg_color: #010101;selected_bg_color: #C0B2FF;tooltip_fg_color: #010101;tooltip_bg_color: #D7D7D7;clr_red: #FF0066;clr_grn: #66FF00;clr_blu:#0066FF"
+
+gtk-icon-sizes          = "gtk-button=16,16:gtk-menu=22,22:panel-button=16,16:panel-menu=16,16:gtk-large-toolbar=22,22:gtk-toolbar=16,16:gtk-small-toolbar=16,16"
+
+gtk-menu-popup-delay    = 100
+gtk-font-name           = "Ubuntu 8"
+
+gtk-auto-mnemonics 	= 1
+gtk-button-images       = 1
+gtk-menu-images         = 1
+
+gtk-toolbar-icon-size   = GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-toolbar-style       = GTK_TOOLBAR_ICONS
+
+# BASE STYLES
+
+style "DarkArts" { 
+
+# PROPERTiES
+ 
+	GtkWidget::new-tooltip-style			 = 1
+	GtkWidget::focus-line-pattern			 = "\001\001"
+	GtkWidget::focus-line-width			 = 0
+	GtkWidget::focus-padding			 = 1
+	GtkWidget::interior-focus			 = 1
+	GtkWidget::scroll-arrow-hlength			 = 16
+	GtkWidget::scroll-arrow-vlength			 = 16
+	GtkWidget::link-color				 = shade(1.25, @clr_blu)
+	GtkWidget::visited-link-color			 = shade(1.25, @clr_red)
+
+# PROPERTiES (WINDOWS)
+
+	GtkDialog::action-area-border			 = 0
+	GtkDialog::button-spacing			 = 4
+	GtkDialog::content-area-border			 = 0
+	GtkDialog::content-area-spacing			 = 0
+
+# PROPERTiES (CONTROLS)
+
+	GtkButton::child-displacement-x			 = 1
+	GtkButton::child-displacement-y			 = 1
+	GtkButton::default-border			 = { 0, 0, 0, 0 }
+	GtkButton::displace-focus			 = 0
+	GtkButton::image-spacing			 = 0
+	
+	GtkCheckButton::indicator-size			 = 13
+	GtkCheckButton::indicator-spacing		 = 2
+	
+	GtkCheckMenuItem::indicator-size		 = 13
+	
+	GtkOptionMenu::indicator-size			 = { 6, 10 }
+	GtkOptionMenu::indicator-spacing		 = { 6, 5, 0, 0 }
+	
+	GtkComboBox::appears-as-list			 = 0
+	GtkComboBox::arrow-size				 = 13
+	GtkComboBox::shadow-type			 = GTK_SHADOW_NONE
+
+	GtkPaned::handle-size				 = 5
+
+	GtkRange::arrow-displacement-x			 = 0
+	GtkRange::arrow-displacement-y			 = 0
+	GtkRange::arrow-scaling				 = 0.3
+	GtkRange::stepper-size				 = 14
+	GtkRange::stepper-spacing			 = 0
+	GtkRange::trough-border				 = 0
+	GtkRange::trough-under-steppers			 = 1
+
+	GtkScale::activate-slider			 = 1
+	GtkScale::slider-length				 = 23
+	GtkScale::slider-width				 = 14
+	GtkScale::trough-side-details			 = 1
+
+	GtkScrollbar::activate-slider			 = 1
+	GtkScrollbar::arrow-scaling			 = 0.4
+	GtkScrollbar::fixed-slider-length		 = 0
+	GtkScrollbar::min-slider-length			 = 50
+	GtkScrollbar::slider-width			 = 15
+	GtkScrollbar::stepper-spacing			 = 0
+	GtkScrollbar::trough-side-details		 = 0
+	GtkScrollbar::trough-under-steppers		 = 1
+	GtkScrollbar::has-backward-stepper		 = 1
+	GtkScrollbar::has-forward-stepper		 = 1
+	GtkScrollbar::has-secondary-backward-stepper	 = 0
+	GtkScrollbar::has-secondary-forward-stepper	 = 0
+
+	GtkHScrollbar::has-secondary-backward-stepper	 = 0
+	GtkVScrollbar::has-secondary-backward-stepper	 = 0
+	GtkVScrollbar::has-secondary-forward-stepper	 = 0
+
+# PROPERTiES (MENUS)
+
+	GtkMenuBar::internal-padding			 = 0
+	GtkMenuBar::shadow-type				 = GTK_SHADOW_NONE
+	GtkMenuBar::window-dragging 			 = 1
+
+	GtkMenu::arrow-placement			 = GTK_ARROWS_BOTH
+	GtkMenu::arrow-scaling				 = 0.5
+	GtkMenu::double-arrows				 = 1
+	GtkMenu::horizontal-offset			 = -2
+	GtkMenu::horizontal-padding			 = 0
+	GtkMenu::vertical-offset			 = 0
+	GtkMenu::vertical-padding			 = 0
+	
+	GtkMenuItem::arrow-scaling			 = 0.5
+	GtkMenuItem::horizontal-padding			 = 3
+	GtkMenuItem::selected-shadow-type		 = GTK_SHADOW_NONE
+	GtkMenuItem::toggle-spacing			 = 4
+	GtkMenuItem::width-chars			 = 12
+
+# PROPERTiES (...)
+
+	GtkArrow::arrow-scaling				 = 0.5
+
+	GtkNotebook::arrow-spacing			 = 0
+	GtkNotebook::tab-curvature			 = 0
+	GtkNotebook::tab-overlap			 = 0
+
+	GtkTreeView::horizontal-separator		 = 8
+	GtkTreeView::vertical-separator			 = 2
+
+	GtkEntry::honors-transparent-bg-hint		 = 1
+	
+	GtkToolbar::internal-padding			 = 0
+	GtkToolbar::shadow_type				 = GTK_SHADOW_NONE
+	
+	GtkImage::x-ayatana-indicator-dynamic		 = 1
+	
+	GtkMenuBar::window-dragging			 = 0
+	
+	GtkExpander :: expander-size			 = 8
+	GtkExpander :: expander-spacing			 = 20
+	
+	xthickness = 1
+	ythickness = 1
+
+# COLORS
+
+	bg[NORMAL]          = @bg_color
+	bg[PRELIGHT]        = shade(1.1, @selected_bg_color)
+	bg[ACTIVE]          = shade(0.9, @base_color)
+	bg[INSENSITIVE]     = @bg_color
+	bg[SELECTED]        = @selected_bg_color
+
+	fg[NORMAL]          = @fg_color
+	fg[PRELIGHT]        = @text_color
+	fg[ACTIVE]          = shade(0.9, @fg_color)
+	fg[INSENSITIVE]     = shade(0.7, @bg_color)
+	fg[SELECTED]        = @text_color
+
+	base[NORMAL]        = @base_color
+	base[PRELIGHT]      = @selected_bg_color
+	base[INSENSITIVE]   = shade(1.0, @bg_color)
+	base[ACTIVE]        = shade(0.9, @selected_bg_color)
+	base[SELECTED]      = @selected_bg_color
+
+	text[NORMAL]        = @text_color
+	text[PRELIGHT]      = @text_color
+	text[ACTIVE]        = @text_color
+	text[INSENSITIVE]   = shade(0.7, @bg_color)
+	text[SELECTED]      = @selected_fg_color
+
+# ENGiNE (MURRiNE)
+
+	engine "murrine" {
+	animation           = TRUE      # Animations on progressbars, radio and checkbuttons.
+	colorize_scrollbar  = TRUE      # Colorized scrollbars.
+	gradients           = TRUE      # Gradients.
+	rgba                = TRUE   	# RGBA support.
+
+	focus_color         = @selected_bg_color
+	
+	glazestyle          = 0         # [ 0   ] (0) Flat,(1) Curved,(2) Concave,(3) Top Curved,(4) Beryl 
+	glowstyle           = 3         # [ 0   ] (0) Top,          (1) Bottom,     (2) Top & Bottom,   (3) Horizontal, (4) Centered
+	lightborderstyle    = 1         # [ 0   ] (0) Top,          (1) All sides
+	listviewheaderstyle = 2         # [ 0   ] (0) Flat,         (1) Glassy,     (2) Raised
+	listviewstyle       = 1         # [ 0   ] (0) NULL,         (1) Dots
+	menustyle           = 0         # [ 0   ] (0) No VStripe,   (1) VStripe
+        menuitemstyle       = 0         # [ 0   ] (0) Flat,         (1) Glassy,     (2) Striped
+        menubarstyle        = 3         # [ 0   ] (0) Flat,         (1) Glassy,     (2) Gradient,       (3) Striped
+        menubaritemstyle    = 0         # [ 0   ] (0) MenuItem,     (1) Button
+        progressbarstyle    = 1         # [ 1   ] (0) NULL,         (1) Stripes,    (2) Cells
+        reliefstyle         = 0         # [ 2   ] (0) Flat,         (1) Inset,      (2) Shadow
+        scrollbarstyle      = 4         # [ 0   ] (0) NULL,         (1) Circles,    (2) Handles,        (3) DStripes,   (4) 3 & 2,  (5) HStripes,   (6) 5 & 2 
+        sliderstyle         = 0         # [ 0   ] (0) NULL,         (1) Handles
+        stepperstyle        = 0         # [ 0   ] (0) Classic,      (1) Unified
+        toolbarstyle        = 1         # [ 0   ] (0) Flat,         (1) Glassy
+	focusstyle	    = 0
+	separatorstyle	    = 1
+        contrast            = 1.0       # [ 1.0 ] ( 0.10 ) ( 0 - 2 )
+        glow_shade          = 1.0       # [ 1.0 ] ( 0.10 ) ( 0 - 2 )
+        highlight_shade     = 1.0       # [ 1.1 ] ( 0.01 ) ( 0 - 2 )
+        lightborder_shade   = 1.0      	# [ 1.1 ] ( 0.01 ) ( 0 - 2 ) 
+        roundness           = 2         # [ 1   ] ( 1.00 ) ( 0 - 8 )
+        gradient_shades     = {1.1, 1.0, 1.0, 0.9}
+	default_button_color = shade (1.1, @selected_bg_color)
+    }
+}
+style "DarkArts_BIG" {
+
+    xthickness = 2
+    ythickness = 2
+}
+style "DarkArts_FAT" {
+
+    xthickness = 3
+    ythickness = 3
+}
+
+style "DarkArts_BASE__BUTTON" = "DarkArts_FAT" {
+
+# DarkArts -> BUTTON
+
+    bg[NORMAL] = shade(1.2, @base_color) # bg default.
+}
+
+style "DarkArts_BASE__TOGGLE_CHECK_RADIO" = "DarkArts_FAT" { 
+
+# DarkArts -> TOGGLE
+
+    bg[PRELIGHT] = @selected_fg_color # text hover.
+}
+
+style "DarkArts_BASE__TOGGLE_CHECK" = "DarkArts_BASE__TOGGLE_CHECK_RADIO" {
+
+# DarkArts -> TOGGLE CHECK
+
+    bg[SELECTED]    = shade(1.2, @clr_blu) # check bg fill.
+
+    text[NORMAL]    = shade(0.4, @clr_blu) # check indicator default.
+    text[PRELIGHT]  = shade(0.2, @clr_blu) # check indicator hover.
+    text[ACTIVE]    = shade(0.6, @clr_blu) # check indicator press.
+}
+
+style "DarkArts_BASE__TOGGLE_RADIO" = "DarkArts_BASE__TOGGLE_CHECK_RADIO" {
+
+# DarkArts -> TOGGLE RADIO
+
+    bg[SELECTED]    = shade(1.2, @clr_red) # radio bg fill.
+
+    text[NORMAL]    = shade(0.4, @clr_red) # radio indicator default.
+    text[PRELIGHT]  = shade(0.2, @clr_red) # radio indicator hover.
+    text[ACTIVE]    = shade(0.6, @clr_red) # radio indicator press.
+}
+
+style "DarkArts_BASE__EXPANDER" {
+
+# DarkArts -> EXPANDER
+
+    bg[PRELIGHT]    = @selected_fg_color                # no highlighed bg rectangle!
+
+    fg[NORMAL]      = @fg_color                         # frame.
+    fg[PRELIGHT]    = shade(1.2, @selected_bg_color)    # hover.
+
+    base[NORMAL]    = @selected_bg_color                # frame bg.
+}
+
+style "DarkArts_BASE__MENU" = "DarkArts_BIG" {
+
+# DarkArts -> MENU
+
+    bg[NORMAL]	   = shade(1.25, @bg_color)	# bg default.
+}
+
+style "DarkArts_BASE__MENU_ITEM" = "DarkArts_BASE__MENU" {
+
+# DarkArts -> MENU -> iTEM
+
+    xthickness = 1 #2
+    ythickness = 3 #3
+
+    GtkWidget::separator-height   = 0         # [ 0 ] ...
+    GtkWidget::separator-width    = 0         # [ 0 ] ...
+    GtkWidget::wide-separators    = 1         # [ 0 ] Configurable width and should be drawn using a box instead of a line.
+
+    bg[PRELIGHT]    = shade(0.85, @selected_bg_color)    # bg active.
+    bg[SELECTED]    = shade(0.85, @selected_bg_color)    # bg active.
+
+    text[NORMAL]    = shade(1.4, @clr_red)      # check item indicator.
+    text[PRELIGHT]  = shade(1.6, @clr_red)      # check item indicator hover.
+}
+
+style "DarkArts_BASE__MENUBAR" {
+
+# DarkArts -> MENUBAR
+
+    bg[NORMAL] = shade(0.85, @bg_color) # bg default.
+}
+
+style "DarkArts_BASE__MENUBAR_ITEM" = "DarkArts_BASE__MENU_ITEM" {
+
+# DarkArts -> MENUBAR -> iTEM
+
+    bg[PRELIGHT] = shade(1.25, @bg_color) # bg press, menu -> bg default.
+}
+
+style "DarkArts_BASE__NOTEBOOK" = "DarkArts_BIG" {
+
+# DarkArts -> NOTEBOOK
+ 
+    bg[ACTIVE] = shade(1.2, @base_color) # inactive tab bg.
+}
+
+style "DarkArts_BASE__TOOLBAR" = "DarkArts_BIG" {
+
+# DarkArts -> TOOLBAR
+ 
+}
+
+style "DarkArts_BASE__TREEVIEW" {
+
+# DarkArts -> TREEViEW
+
+    base[SELECTED]  = mix(0.25, @base_color, @selected_bg_color) # selection bg.
+    base[ACTIVE]    = mix(0.10, @base_color, @selected_bg_color) # selection no-focus bg.
+}
+
+style "DarkArts_BASE__RANGE" = "DarkArts_BASE__BUTTON" {
+
+# DarkArts -> RANGE
+
+    xthickness = 1
+    ythickness = 1
+}
+
+style "DarkArts_BASE__RANGE_SCALE" = "DarkArts_BASE__RANGE" {
+
+# DarkArts -> RANGE -> SCALE
+
+    bg[ACTIVE] = shade(1.25, @base_color) # bg press.
+}
+
+style "DarkArts_BASE__RANGE_SCROLLBAR" = "DarkArts_BASE__RANGE" {
+
+# DarkArts -> RANGE -> SCROLLBAR
+
+    bg[SELECTED] = mix(0.6, shade(1.1, @base_color), @selected_bg_color) # slider bg.
+}
+
+style "DarkArts_BASE__TOOLTIP" = "DarkArts_FAT" {
+
+# DarkArts -> TOOLTiP
+
+    bg[NORMAL] = @tooltip_bg_color
+    fg[NORMAL] = @tooltip_fg_color
+}
+
+# WIDGET STYLES
+
+# GtkBin [ (TOGGLE)BUTTON EXPANDER ]
+
+style "DarkArts__BUTTON" = "DarkArts_BASE__BUTTON" { 
+
+# GtkButton
+
+    engine "murrine" {}
+}
+    style "DarkArts__TOGGLE_CHECK" = "DarkArts_BASE__TOGGLE_CHECK" { 
+    
+    # GtkButton -> GtkToggleButton -> GtkCheckButton
+    
+        engine "murrine" {}
+    }
+        style "DarkArts__TOGGLE_RADIO" = "DarkArts_BASE__TOGGLE_RADIO" { 
+        
+        # GtkButton -> GtkToggleButton -> GtkCheckButton -> GtkRadioButton
+        
+            engine "murrine" {}
+        }
+
+style "DarkArts__EXPANDER" = "DarkArts_BASE__EXPANDER" {
+
+# GtkExpander
+
+}
+
+# GtkContainer [ MENU(BAR) ]
+ 
+style "DarkArts__MENU" = "DarkArts_BASE__MENU" { 
+
+# GtkMenuShell -> GtkMenu
+
+    engine "murrine" {}
+}
+    style "DarkArts__MENU_ITEM" = "DarkArts_BASE__MENU_ITEM" { 
+    
+    # GtkItem -> GtkMenuItem
+    
+        engine "murrine" {
+            roundness = 1
+        }
+    }
+
+style "DarkArts__MENUBAR" = "DarkArts_BASE__MENUBAR" { 
+
+# GtkMenuShell -> GtkMenuBar
+	
+    engine "murrine" {}
+}
+    style "DarkArts__MENUBAR_ITEM" = "DarkArts_BASE__MENUBAR_ITEM" { 
+    
+    # GtkMenuShell -> GtkMenuBar -> x
+    	
+        engine "murrine" {}
+    }
+
+# GtkContainer [ (NOTEBOOK|TOOLBAR) ]
+style "DarkArts__NOTEBOOK" = "DarkArts_BASE__NOTEBOOK" {
+
+# GtkNotebook
+
+    engine "murrine" {
+        contrast        = 1.0
+        gradient_shades = { 1.85, 1.25, 1.2, 1.0 }
+    }
+
+#    engine "clearlooks" {
+#        disable_focus   = TRUE
+#        contrast        = 1.0
+#        radius          = 2.0
+#        reliefstyle     = 1
+#        style           = GLOSSY # GLOSSY GUMMY INVERTED CLASSIC
+#    }
+}
+
+style "DarkArts__TOOLBAR" = "DarkArts_BASE__TOOLBAR" {
+
+# GtkToolbar
+
+}
+
+# GtkContainer [ (LIST|TREE(VIEW)) ]
+
+style "DarkArts__TREEVIEW" = "DarkArts_BASE__TREEVIEW" {
+
+# GtkTreeView
+
+    fg[NORMAL]      = @text_color               # expander.
+    fg[PRELIGHT]    = shade(1.6, @text_color)   # ...
+    fg[ACTIVE]      = @text_color               # .
+
+    engine "murrine" {
+        gradient_shades = { 1.1, 1.05, 1.025, 0.9 }        
+    }
+}
+    style "DarkArts__TREEVIEW_HEADER" {
+    
+    # GtkTreeView -> *header*
+    
+        xthickness = 2
+        ythickness = 1
+
+        fg[NORMAL]      = @fg_color                 # expander reset.
+        fg[PRELIGHT]    = @fg_color                 # ...
+        fg[ACTIVE]      = shade(0.9, @fg_color)     # .
+    }
+
+# GtkWidget [ ENTRY ]
+
+style "DarkArts__ENTRY" = "DarkArts_FAT" { 
+
+# GtkEntry
+
+    engine "murrine" {}
+}
+    style "DarkArts__ENTRY_SPIN" = "DarkArts_FAT" { 
+    
+    # GtkEntry -> GtkSpinButton
+    
+        engine "murrine" {}
+    }
+
+# GtkWidget [ SC(ALE|ROLLBAR) ]
+
+style "DarkArts__RANGE_SCALE" = "DarkArts_BASE__RANGE_SCALE" {
+
+# GtkRange -> GtkScale
+
+    engine "murrine" { 
+        contrast = 1.1
+    }
+}
+
+style "DarkArts__RANGE_SCROLLBAR" = "DarkArts_BASE__RANGE_SCROLLBAR" {
+
+# GtkRange -> GtkScrollbar
+
+    engine "murrine" { 
+        contrast = 1.1
+    }
+}
+
+# G(tk)Object  [ TOOLTIP ]
+
+style "DarkArts__TOOLTIP" = "DarkArts_BASE__TOOLTIP" { 
+
+# GtkTooltip(s)
+
+    engine "murrine" {
+        gradient_shades = { 0.95, 1.0, 1.0, 0.95 }
+    }
+}
+
+# MATCHES
+
+class "GtkWidget"       style "DarkArts"
+class "GtkButton"       style "DarkArts__BUTTON"
+class "GtkCheckButton"  style "DarkArts__TOGGLE_CHECK"
+class "GtkRadioButton"  style "DarkArts__TOGGLE_RADIO"
+class "GtkExpander"     style "DarkArts__EXPANDER"
+class "GtkMenuBar"      style "DarkArts__MENUBAR"
+class "GtkMenu"         style "DarkArts__MENU"
+class "GtkMenuItem"     style "DarkArts__MENU_ITEM"
+class "GtkNotebook"     style "DarkArts__NOTEBOOK"
+class "GtkToolbar"      style "DarkArts__TOOLBAR"
+class "GtkTreeView"     style "DarkArts__TREEVIEW"
+class "GtkEntry"        style "DarkArts__ENTRY"
+class "GtkSpinButton"   style "DarkArts__ENTRY_SPIN"
+class "GtkRange"        style "DarkArts_BASE__RANGE"
+class "GtkScale"        style "DarkArts__RANGE_SCALE"
+class "GtkScrollbar"    style "DarkArts__RANGE_SCROLLBAR"
+
+# MATCHES (WiDGETS)
+
+widget_class "*<GtkMenuBar>.*"                  style "DarkArts__MENUBAR_ITEM"
+widget_class "*.<GtkTreeView>.<GtkButton>"      style "DarkArts__TREEVIEW_HEADER"
+widget_class "*.<GtkCTree>.<GtkButton>"         style "DarkArts__TREEVIEW_HEADER"
+widget_class "*.<GtkList>.<GtkButton>"          style "DarkArts__TREEVIEW_HEADER"
+widget_class "*.<GtkCList>.<GtkButton>"         style "DarkArts__TREEVIEW_HEADER"
+
+# MATCHES (SPECiAL)
+
+widget "*gtk-tooltip*" style:highest "DarkArts__TOOLTIP"
+
+# WORKAROUNDS
+
+# CLEARLOOKS
+
+style "FIX__TEXT_IS_FG_COLOR" { 
+
+# Wrokaround style for places where the text color is used instead of the fg color.
+
+    text[NORMAL]        = @fg_color
+    text[PRELIGHT]      = @fg_color
+    text[ACTIVE]        = shade(0.9, @fg_color)
+    text[INSENSITIVE]   = shade(0.7, @bg_color)
+    text[SELECTED]      = @selected_fg_color
+}
+style "FIX__FG_IS_TEXT_COLOR" { 
+
+# Workaround style for places where the fg color is used instead of the text color.
+
+    fg[NORMAL]      = @text_color
+    fg[PRELIGHT]    = @text_color
+    fg[ACTIVE]      = @selected_fg_color
+    fg[INSENSITIVE] = shade(0.7, @bg_color)
+    fg[SELECTED]    = @selected_fg_color
+}
+
+widget_class "*.<GtkComboBox>.<GtkCellView>"            style "FIX__TEXT_IS_FG_COLOR"
+widget       "*.gtk-combobox-popup-menu.*"              style "FIX__TEXT_IS_FG_COLOR"
+widget_class "*<GtkListItem>*"                          style "FIX__FG_IS_TEXT_COLOR"
+widget_class "*<GtkCList>"                              style "FIX__FG_IS_TEXT_COLOR"
+widget_class "*<EelEditableLabel>"                      style "FIX__FG_IS_TEXT_COLOR"
+
+# LibreOffice
+widget 	     "GtkWindow.GtkFixed*.GtkToolbar" 		style:highest "toolbar"
+
+# ANJUTA
+widget_class "*GdlDockItemGrip*"                        style "FIX__TEXT_IS_FG_COLOR"
+
+# GNOME
+style "FIX__GNOME_CFG_CENTER" {
+    fg[ACTIVE]      = shade(0.9, @fg_color)
+    fg[NORMAL]      = @text_color
+    fg[PRELIGHT]    = @fg_color
+}
+style "FIX__GNOME_PANEL" {
+    bg[NORMAL] = @bg_color
+}
+
+widget_class "*<BonoboDock>.*<ApplicationTile>*"        style "FIX__GNOME_CFG_CENTER"
+widget_class "*PanelWidget*" 				style "FIX__GNOME_PANEL"
+
+# PiDGiN
+widget_class "*<PidginStatusBox>.<GtkToggleButton>*"    style "FIX__TEXT_IS_FG_COLOR"
+
+# QUOD LiBET
+widget_class "quodlibet+qltk+views+TreeViewHints*"      style "DarkArts__TOOLTIP"
+
+# Notifcation daemon (TEST)
+
+#style "DarkArts__IFY" {
+#    bg[NORMAL]      = shade(1.0, @DarkArts_txt)          # BG
+#    bg[ACTIVE]      = shade(0.8, @DarkArts_bas)          # BORDER
+
+#    fg[NORMAL]      = mix(0.5, @DarkArts_bas, @clr_blu)  # FG HEADER 
+#    fg[ACTIVE]      = mix(0.5, @DarkArts_bas, @clr_red)  # FG HEADER CRITICAL
+
+#    text[NORMAL] 	= @DarkArts_bas
+
+#    base[NORMAL]	= mix(0.25, @DarkArts_txt, @clr_blu) # NORMAL STRIPE
+#    base[ACTIVE] 	= mix(0.25, @DarkArts_txt, @clr_red) # CRITICAL ...
+#}
+#widget_class "DarkArtsify" style:highest "DarkArts__IFY"

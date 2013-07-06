@@ -1,0 +1,32 @@
+style "ff-default" {
+	GtkCheckButton::indicator-size = 14
+	engine "murrine" {
+	#animation           = TRUE      # Animations on progressbars, radio and checkbuttons.
+	#colorize_scrollbar  = TRUE      # Colorized scrollbars.
+	#gradients           = TRUE      # Gradients.
+	rgba                = TRUE   	# RGBA support.
+	}
+}
+
+style	"ff-statusbar" {
+}
+
+#widget	"MozillaGtkWidget*Toolbar*"	style	"theme-toolbar"
+#widget	"MozillaGtkWidget*Statusbar*"	style	"ff-statusbar"
+
+
+widget	"MozillaGtkWidget*"	style	"ff-default"
+
+# ------------------------------------------------------------------------------
+# Some Firefox (3.0/3.5) GTK widgets hierarchy (maybe useful for someone)
+# ------------------------------------------------------------------------------
+
+# Top toolbars (and maybe others)
+#widget	"MozillaGtkWidget.GtkFixed.GtkHandleBox.GtkToolbar"	style	"theme-dark-toolbar"
+
+# Findbar entry, gecko (all html) entry
+#widget	"MozillaGtkWidget.GtkFixed.GtkEntry"	style	"theme-dark-entry"
+
+# ALL buttons
+#widget	"MozillaGtkWidget.GtkFixed.GtkButton"	style	"theme-dark-button"
+

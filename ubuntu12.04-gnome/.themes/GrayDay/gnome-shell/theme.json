@@ -1,0 +1,10 @@
+{ 
+   "shell-theme": {
+   "name": "Ambiance Blue", 
+   "author": "Satyajit Sahoo", 
+   "version": "1.2",
+   "type":   "custom",
+   "thumbnail": "preview.png", 
+   "url": "http://satya164.deviantart.com/" 
+    }
+}

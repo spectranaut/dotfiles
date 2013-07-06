@@ -1,0 +1,53 @@
+
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@nautilus_cluebar_color, 1.00)),
+                                     to (shade (@nautilus_cluebar_color, 1.00)));
+    border-radius: 0px;
+    border-width: 1px 0px;
+    border-style: solid;
+	border-color: shade(@nautilus_cluebar_color, 1.01) @nautilus_cluebar_color shade(@nautilus_cluebar_color, 0.80);
+
+	-unico-inner-stroke-width: 		0px 0px 1px 0px;
+    -unico-inner-stroke-gradient: 	-gtk-gradient (linear,
+				                                   left top, left bottom,
+				                                   from (alpha(#fff, 0.36)),
+				                                   to   (alpha(#fff, 0.36)));
+}
+
+NautilusSearchBar .entry,
+NautilusSearchBar .entry:focused {
+    border-width: 1px;
+    border-style: solid;
+    -unico-border-gradient: -gtk-gradient (linear,
+                                 left top, left bottom,
+                                 from (shade (@nautilus_cluebar_color, 0.70)),
+                                 to (shade (@nautilus_cluebar_color, 0.75)));
+
+    -unico-outer-stroke-width:  1px;
+    -unico-outer-stroke-gradient: none;
+
+	padding: 3px 4px;
+    -GtkEntry-inner-border: 1;
+}
+
+NautilusTrashBar .button {
+	padding: 0px;
+}
+
+NautilusTrashBar .button GtkLabel {
+	padding: 0px 4px;
+}
+
+NautilusSearchBar .entry.image {
+    color: shade(@nautilus_cluebar_color, 0.70);
+}
+
+.nautilus-cluebar-label {
+    /* font: bold; */
+    color: @theme_fg_color;
+}

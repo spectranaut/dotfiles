@@ -1,0 +1,62 @@
+update 1.12 (2012-09-01)
+- Added new buttons to metacity, now there are two options
+1. - normal buttons (initial style)
+2. - nounded buttons (new style)
+To use one style or another, copy file content of metacity_buttons_normal.tar.gz or metacity_buttons_rounded.tar.gz in the folder ../GrayDay/metacity-1 (more details in readme.txt)
+- small adjustments to the height of some widgets
+- slight variation in the style of the gradients
+- redesign in some applications to improve the appearance of the theme
+gedit, terminal, nautilus and epiphany now have tabs in a similar safari style (screenshot 2)
+
+update 1.11 (2012-05-30)
+Maintenance release
+- Fixed Color of some labels in rare circumstances 
+- Fixed tabs appearance of epiphany
+- GTK2: Fixed progressbar color
+- small color correction sidebar
+- Added color scheme "wood"
+- Changed default tab style
+
+
+update 1.10 (2012-05-24)
+- Fix white font in some selected labels
+- improved design of inlinetoolbar ([+-] in open-file dialogs)
+- Now you have the opportunity to change the highlight color scheme easily
+You only have to edit 1 line in /GrayDay/gtk-3.0/gtk.css
+@import url("colors/gtk3-colors-default.css");
+
+and for gtk2, one in the file /GrayDay/gtk-2.0/gtkrc
+include "colors/gtk2-colors-default.rc" 
+
+Here are some predefined known options:
+---------------------------------------
+- Default:	 @import url("colors/gtk3-colors-default.css");
+- Fedora (blue): @import url("colors/gtk3-colors-fedora.css");
+- Ubuntu (orange): @import url("colors/gtk3-colors-ubuntu.css");
+- Mint (green): @import url("colors/gtk3-colors-mint.css");
+- Graphite:	 @import url("colors/gtk3-colors-graphite.css"); (recomended with tabs-gray.css)
+- Red (try it!):	@import url("colors/gtk3-colors-red.css");
+
+and similar presets for gtk2
+
+you can learn from the existing presets and create your own! ;)
+
+update 1.03 (2012-05-14)
+- IMPORTANT: The theme is now specifically for Gnome 3.4 (NOT INSTALL in Gnome 3.2)
+- No more error messages when running applications from the terminal (gnome 3.4)
+- Small tweaks in gnome-shell to suit gnome 3.4 (test for now)
+- Significant changes in the overall appearance of several widgets (buttons, lists, nautilus pathbar ...)
+- Drastic changes in appearance of the tabs (5 styles: tabs-themed, tabs-themed-light, tabs-dark, tabs-gray, tabs-classic). See screenshot 3 and readme.txt !!!
+
+update 1.02 (2012-03-31)
+- Small tweaks in gnome-shell
+- Fix small bugs
+- Refinement check-radio-buttons
+- High adaptation to gnome 3.4 ubuntu 12.04 (still a small problem with text tabs color)
+
+Version 1.01 (2012-03-11)
+- Added gnome-shell theme
+- small tweaks (some bordes, radiobutton a little darker, ...)
+
+Version 1.0 (2012-03-09)
+Complete compatibility with Gnome 3.2.1 and unity-ubuntu 11.10

@@ -1,0 +1,135 @@
+Autor: Rafa Cobreros
+Original theme en: http://gnome-look.org/content/show.php/GrayDay?content=149310
+
+Personalización del tema:
+	1.- Seleccionar estilo para nautilus
+	2.- Seleccionar estilo del panel superior de unity
+	3.- Seleccionar estilo de TABS
+	4.- Seleccionar colores de resaltado
+	5.- Seleccionar estilo de botones para ventanas (metacity)
+
+----------------------------------------
+* 1.- Seleccionar estilo para nautilus *
+----------------------------------------
+Editar (gedit) el archivo ../GrayDay/gtk-3.0/gtk.css
+
+Ve a la ultima linea y encontraras 5 opciones para nautilus:
+
+	1.- "gnome-applications-gray-light.css" (nautilus sidebar gris y toolbar claro)
+	2.- "gnome-applications-gray.css"  		(nautilus sidebar y toolbar gris)
+	3.- "gnome-applications-light.css" 		(nautilus sidebar claro estilo cupertino)
+	4.- "gnome-applications-unity.css"		(nautilus sidebar gris y toolbar claro para UNITY)
+	5.- "gnome-applications-unity-gray.css"	(nautilus sidebar y toolbar gris para UNITY)
+	
+modifica la linea "@import" para que se corresponda con el estilo que buscas,
+de forma que quede como una de las cinco lineas de abajo.
+(ten cuidado de dejar solo UNA de las cinco opciones)
+
+@import url("gnome-applications-gray-light.css");
+o
+@import url("gnome-applications-gray.css");
+O
+@import url("gnome-applications-light.css");
+o
+@import url("gnome-applications-unity.css");
+o
+@import url("gnome-applications-unity-gray.css");
+
+
+------------------------------------------------------
+* 2.- Seleccionar estilo del panel superior de unity *
+------------------------------------------------------
+Editar (gedit) el archivo ../GrayDay/gtk-3.0/gtk.css 
+
+Hay 3 opciones para el panel de unity
+Ve a la linea donde pone:
+@import url("unity.css");
+
+y modificala de acuerdo con la opcion que desees
+
+1.- Para un panel transparente estilo Mac
+@import url("unity-transparent.css");
+
+2.- Para un panel oscuro
+@import url("unity-darkest.css");
+
+3.- Para poner el panel por defecto del theme
+@import url("unity.css");
+
+----------------------------------
+* 3.- Seleccionar estilo de TABS *
+----------------------------------
+Editar (gedit) el archivo ../GrayDay/gtk-3.0/gtk.css
+
+Ve a la linea donde pone 
+@import url("tabs-themed.css");
+
+y modificala segun la opcion que desees
+
+1.- tabs del tema por defecto
+@import url("tabs-themed.css");
+
+2.- tabs del tema por defecto color claro
+@import url("tabs-themed-light.css");
+
+3.- tabs gris obscuro
+@import url("tabs-dark.css");
+
+4.- tabs gris
+@import url("tabs-gray.css");
+
+5.- Estilo de tabs mas traditional style
+@import url("tabs-classic.css");
+
+(ten cuidado de dejar solo UNA de las cinco anteriores)
+
+NOTA:
+	- Es conveniente cerrar y abrir sesión despues de hacer los cambios
+
+--------------------------------------
+* 4.- Seleccionar colores de resaltado
+--------------------------------------
+Editar el archivo  ../GrayDay/gtk-3.0/gtk.css
+
+Ir a la linea donde pone:
+@import url("colors/gtk3-colors-default.css");
+
+Cambiala por uno de los presets existentes
+-------------------------------------------
+- Default:			@import url("colors/gtk3-colors-default.css");
+- Fedora (blue): 	@import url("colors/gtk3-colors-fedora.css");
+- Ubuntu (orange): 	@import url("colors/gtk3-colors-ubuntu.css");
+- Mint (green): 	@import url("colors/gtk3-colors-mint.css");
+- Graphite:			@import url("colors/gtk3-colors-graphite.css");  (recomended with tabs-gray.css)
+- Red (try it!):	@import url("colors/gtk3-colors-red.css");
+
+de forma similar, para gtk2
+Editar el archivo  ../GrayDay/gtk-2.0/gtkrc
+BUsca y edita
+include "colors/gtk2-colors-default.rc"  
+
+Aprende de los presets existentes y haz el tuyo propio! ;)
+
+-----------------------------------------------------------------------
+* 5.- Seleccionar tipo de botones para titulos de ventanas (metacity) *
+-----------------------------------------------------------------------
+Dos opciones
+1. - Botones normales (estilo inicial del tema)
+2. - Botones redondeados (estilo nuevo)
+
+Para usar un estilo o el otro, copia el contenido del archivo
+metacity_buttons_normal.tar.gz
+ Ó 
+metacity_buttons_rounded.tar.gz
+en la carpeta ../GrayDay/metacity-1/
+
+Si usas UNITY, copia tambien el contenido del archivo 
+unity-buttons-normal.tar.gz
+ Ó 
+unity-buttons-rounded.tar.gz
+en la carpeta: ../GrayDay/unity/
+
+
+NOTA:
+	- Tienes que cerrar y abrir sesion parar ver los cambios
+

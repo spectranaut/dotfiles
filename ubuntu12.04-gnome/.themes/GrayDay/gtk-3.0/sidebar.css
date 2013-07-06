@@ -1,0 +1,99 @@
+/***********
+ * Sidebar *
+ ***********/
+
+.sidebar {
+    -GtkTreeView-horizontal-separator: 	6;
+    -GtkTreeView-vertical-separator: 	1;
+}
+
+.sidebar.view,
+.sidebar .view ,
+.sidebar .view:prelight {
+    border-radius: 0px;
+    background-color: 	@sidebar_background;	
+	color:      		shade(@theme_text_color, 0.80);
+    text-shadow: 0 1 shade (@sidebar_background, 1.05); 
+
+}
+
+.sidebar.view:selected,
+.sidebar.view *:selected
+.sidebar .view:selected,
+.sidebar .view *:selected,
+.sidebar .view:selected:prelight {
+    border-style: solid;
+    border-width: 1px 0px;
+    border-color: shade (@sidebar_selected_bg, 1.20) #bbb shade (@sidebar_selected_bg, 0.85);
+
+
+    background-image: -gtk-gradient (linear,
+                    left top,
+                    left bottom,
+                    from (shade(@sidebar_selected_bg, 1.30)),
+                    to (shade(@sidebar_selected_bg, 1.00)));
+    color: #ffffff;    
+    text-shadow: 1 2 shade (@sidebar_selected_bg, 0.9);
+}
+
+.sidebar .radio,
+.sidebar .radio:focused,
+.sidebar .radio:selected {
+    background-image: none;
+    background-color: alpha(@theme_base_color, 0.0);
+}
+
+GtkHCollapsablePaned,
+SourceList.pane-separator {
+    border-width: 0px;
+    -GtkPaned-handle-size: 2;
+}
+
+.sidebar-pane-separator,
+.sidebar-pane-separator:prelight,
+.sidebar-pane-separator:selected,
+GtkHCollapsablePaned.pane-separator,
+GtkHCollapsablePaned.pane-separator:prelight,
+GtkHCollapsablePaned.pane-separator:selected {
+    background-image: 	none;
+    background-color: 	@sidebar_background;
+    border-width: 0px 1px 0px 0px;
+    border-style: 		solid;
+    border-color: 		shade (@button_border, 0.90);
+
+}
+
+/* Marlin sidebar separator */
+VarkaWidgetsHCollapsiblePaned,
+VarkaWidgetsHCollapsiblePaned.pane-separator,
+VarkaWidgetsHCollapsiblePaned.pane-separator:prelight,
+VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
+    border-width: 0px;
+	border-color:		shade(@sidebar_background, 0.80);
+    background-image: -gtk-gradient(linear,
+                                    left top, right top,
+                                    from(@sidebar_background),
+                                    color-stop(0.80, @sidebar_background),
+                                    color-stop(0.80, shade(@sidebar_background, 1.90)),
+                                    to(shade (@button_border, 0.20)));
+}
+
+/*
+VarkaWidgetsHCollapsiblePaned {
+    border-width: 0px;
+    -GtkPaned-handle-size: 1;
+}
+
+VarkaWidgetsHCollapsiblePaned.pane-separator,
+VarkaWidgetsHCollapsiblePaned.pane-separator:prelight,
+VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
+    background-image: -gtk-gradient (linear,
+         left top,
+         right top,
+         from (shade (@bg_color, 1.30)),
+         to (shade (@bg_color, 0.55)));
+    background-color: alpha(#fff, 0.0);
+}
+
+*/
+

@@ -1,0 +1,359 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+
+/* draw regular check and radio items  */
+.check,
+.check row:selected,
+.check row:selected:focused {
+    /* background-image: url("assets/checkbox-unchecked.svg"); */
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focused:insensitive {
+    /* background-image: url("assets/checkbox-unchecked-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent,
+.check:active,
+.check row:selected:active,
+.check row:selected:focused:active {
+/*    background-image: url("assets/checkbox-checked.svg"); */
+
+    -unico-bullet-color: shade (@selected_bg_color, 0.40);
+    -unico-bullet-outline-color: alpha (#000, 0.0);
+
+	background-image: -gtk-gradient (radial,
+                                       0.50 0.00, 0.25,
+       								   0.50 0.05, 1.00,
+									   from (shade (@button_gradient_color_a, 1.48)),
+       								   to   (shade (@button_gradient_color_a, 1.10)));
+
+    border-width: 1px;
+    border-style: solid; 
+    border-radius: 3px;
+    -unico-border-gradient: -gtk-gradient (linear,
+							left top, left bottom,
+							from (shade (@theme_border, 0.85)),
+							to (shade (@theme_border, 0.65)));
+
+    -unico-outer-stroke-width: 1px;
+    -unico-outer-stroke-gradient:  -gtk-gradient (linear,
+													left top, left bottom,
+                                              		from (alpha (#000, 0.00)),
+													color-stop (0.85, alpha (#000, 0.00)),
+													color-stop (0.85, alpha (#000, 0.06)),
+                                                	to (alpha (#000, 0.08)));
+
+	-unico-inner-stroke-width: 1px;
+    -unico-inner-stroke-gradient: -gtk-gradient (linear,
+                    				left top, left bottom,
+                    				from (alpha (#000, 0.06)),
+                    				to (alpha (#000, 0.06)));
+
+	-unico-focus-fill-color: alpha (@theme_base_color, 0.0);
+
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focused:active:insensitive {
+    /* background-image: url("assets/checkbox-checked-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent {
+    /* background-image: url("assets/checkbox-mixed.svg"); */
+}
+
+.check:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focused:inconsistent:insensitive {
+    /* background-image: url("assets/checkbox-mixed-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.radio,
+.radio row,
+.radio row:selected,
+.radio row:selected:focused {
+    border-radius: 10px;
+    /* background-image: url("assets/radio-unselected.svg"); */
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focused:insensitive {
+    /* background-image: url("assets/radio-unselected-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent,
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focused:active {
+    /* background-image: url("assets/radio-selected.svg"); */
+    -unico-bullet-color: shade (@selected_bg_color, 0.60);
+    -unico-bullet-outline-color: alpha (#000, 0.0);
+
+	background-image: -gtk-gradient (radial,
+                                       0.50 0.00, 0.25,
+       								   0.50 0.05, 1.00,
+									   from (shade (@button_gradient_color_a, 1.48)),
+       								   to   (shade (@button_gradient_color_a, 1.10)));
+
+    border-width: 1px;
+    border-style: solid; 
+    border-radius: 10px;
+    -unico-border-gradient: -gtk-gradient (linear,
+							left top, left bottom,
+							from (shade (@theme_border, 0.85)),
+							to (shade (@theme_border, 0.65)));
+
+    -unico-outer-stroke-width: 1px;
+    -unico-outer-stroke-gradient:  -gtk-gradient (linear,
+													left top, left bottom,
+                                              		from (alpha (#000, 0.00)),
+													color-stop (0.85, alpha (#000, 0.00)),
+													color-stop (0.85, alpha (#000, 0.06)),
+                                                	to (alpha (#000, 0.08)));
+
+	-unico-inner-stroke-width: 1px;
+    -unico-inner-stroke-gradient: -gtk-gradient (linear,
+                    				left top, left bottom,
+                    				from (alpha (#000, 0.06)),
+                    				to (alpha (#000, 0.06)));
+
+	-unico-focus-fill-color: alpha (@theme_base_color, 0.0);
+
+}
+
+.radio:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focused:active:insensitive {
+    /* background-image: url("assets/radio-selected-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent {
+    /* background-image: url("assets/radio-mixed.svg"); */
+}
+
+.radio:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focused:inconsistent:insensitive {
+    /* background-image: url("assets/radio-mixed-insensitive.svg"); */
+	-unico-bullet-color: @insensitive_fg_color;
+}
+
+.sidebar .radio:active,
+.sidebar .radio:active:focused,
+.sidebar .radio:active:prelight {
+    background-image: url("assets/sidebar-radio-checked.svg");
+}
+
+.sidebar .radio:prelight {
+    background-image: url("assets/sidebar-radio-prelight.svg");
+}
+
+.sidebar .radio:active:selected,
+.sidebar .radio:active:selected:focused {
+    background-image: url("assets/sidebar-radio-selected.svg");
+}
+
+.sidebar .radio:selected:prelight,
+.sidebar .radio:selected:focused {
+    background-image: url("assets/sidebar-radio-selected-prelight.svg");    
+}
+
+
+
+.primary-toolbar GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button,
+.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(last),
+GtkComboBox.combobox-entry .button:nth-child(last) {
+    /* border-image: url("assets/entry-border-normal.svg") 2 / 2 2 2 0 stretch; */
+
+}
+
+.primary-toolbar GtkComboBox.combobox-entry .button:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active,
+GtkComboBox.combobox-entry .button:active,
+GtkComboBox.combobox-entry .button:hover:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(last),
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(last),
+GtkComboBox.combobox-entry .button:active:nth-child(last),
+GtkComboBox.combobox-entry .button:hover:active:nth-child(last) {
+    /* border-image: url("assets/combobox-entry-border-active.svg") 2 / 2 2 2 0 stretch; */
+   
+}
+
+/* for RTL languages */
+.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(first),
+GtkComboBox.combobox-entry .button:nth-child(first) {
+    border-image: url("assets/entry-border-normal.svg") 2 / 2 0 2 2 stretch;
+}
+
+.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(first),
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(first),
+GtkComboBox.combobox-entry .button:active:nth-child(first),
+GtkComboBox.combobox-entry .button:hover:active:nth-child(first) {
+    border-image: url("assets/combobox-entry-border-active.svg") 2 / 2 0 2 2 stretch;
+}
+
+GtkScale.trough,
+GtkScale.trough.horizontal {
+    border-image: url("assets/trough-border-horizontal.svg") 2 / 2 stretch;
+}
+
+GtkScale.trough.vertical {
+    border-image: url("assets/trough-border-vertical.svg") 2 / 2 stretch;
+}
+
+
+GtkScale.progressbar.horizontal {
+    border-image: url("assets/trough-active-border-horizontal.svg") 2 / 2 stretch;
+}
+
+GtkScale.progressbar.vertical {
+    border-image: url("assets/trough-active-border-vertical.svg") 2 / 2 stretch;
+}
+
+
+GtkScale.slider,
+GtkScale.slider.horizontal,
+GtkScale.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-horizontal.svg");
+}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-horizontal-insensitive.svg");
+}
+
+GtkScale.slider.vertical {
+    background-image: url("assets/scale-slider-vertical.svg");
+}
+
+GtkScale.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal,
+GtkScale.scale-has-marks-above.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-above-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical {
+    background-image: url("assets/scale-slider-marks-above-vertical.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal,
+GtkScale.scale-has-marks-below.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-below-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical {
+    background-image: url("assets/scale-slider-marks-below-vertical.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
+}
+
+/* .button {
+     border-image: url("assets/button-border.svg") 3 / 3 stretch; 
+} */
+
+.button:active,
+.toolbar .button:active,
+.button:hover:active,
+.toolbar .button:hover:active {
+    /* border-image: url("assets/button-active-border.svg") 3 / 3 stretch; */
+}
+
+/*.button.default {
+    border-image: url("assets/button-default-border.svg") 4 / 4 stretch; 
+} */
+
+.primary-toolbar .toolbar .button:active,
+.primary-toolbar.toolbar .button:active,
+.primary-toolbar .toolbar .button:active:hover,
+.primary-toolbar.toolbar .button:active:hover {
+   /* border-image: url("assets/primary-toolbar-button-active-border.svg") 4 / 4 stretch; */
+}
+
+.toolbar .raised .button,
+.toolbar .raised.button {
+  /* border-image: url("assets/primary-toolbar-raised-button-border.svg") 4 / 4 stretch; */
+    /* background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                                     from (@button_raised_gradient_color_a),
+                                     to (@button_raised_gradient_color_b)); */
+
+}
+
+/* nth-child for linked areas */
+.toolbar .raised.linked.button,
+.toolbar .raised.linked.button:active,
+.toolbar .raised.linked.button:active:hover,
+.toolbar .raised.linked .button,
+.toolbar .raised.linked .button:active,
+.toolbar .raised.linked .button:active:hover {
+    
+    -unico-border-gradient: -gtk-gradient (linear,
+                            left top, left bottom,
+                            from (shade (@button_border, 1.00)),
+                            to (shade (@button_border, 0.90)));
+}
+
+.toolbar .raised.linked.button:nth-child(first) ,
+.toolbar .raised.linked.button:active:nth-child(first),
+.toolbar .raised.linked.button:active:hover:nth-child(first),
+.toolbar .raised.linked:nth-child(first) .button,
+.toolbar .raised.linked:nth-child(first) .button:active,
+.toolbar .raised.linked:nth-child(first) .button:active:hover {
+    
+    -unico-border-gradient: -gtk-gradient (linear,
+                            left top, left bottom,
+                            from (shade (@button_border, 1.00)),
+                            to (shade (@button_border, 0.90)));
+
+}
+
+.toolbar .raised.linked.button:nth-child(last),
+.toolbar .raised.linked.button:active:nth-child(last),
+.toolbar .raised.linked.button:active:hover:nth-child(last),
+.toolbar .raised.linked:nth-child(last) .button,
+.toolbar .raised.linked:nth-child(last) .button:active,
+.toolbar .raised.linked:nth-child(last) .button:active:hover {
+    
+    -unico-border-gradient: -gtk-gradient (linear,
+                            left top, left bottom,
+                            from (shade (@button_border, 1.00)),
+                            to (shade (@button_border, 0.90)));
+
+}
+

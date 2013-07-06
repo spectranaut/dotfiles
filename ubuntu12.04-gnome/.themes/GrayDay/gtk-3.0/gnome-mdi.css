@@ -1,0 +1,159 @@
+
+/*
+GeditWindow GtkLayout,
+GeditWindow GtkExpander,
+GeditWindow GtkAspectFrame,
+*/
+
+GeditWindow GtkPaned,
+EphyWindow {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.81)),
+                                     to (shade (@theme_bg_color, 0.84)));
+
+}
+
+TerminalWindow .notebook,
+GeditWindow .notebook,
+EphyNotebook.notebook {
+    border-width: 1px 0px 0px 0px;
+	border-radius: 0px;
+	-unico-border-gradient: none;
+	border-top-color: shade(@notebook_border, 0.70);
+	border-left-color: @transparent;
+	border-bottom-color: @transparent;
+	border-right-color: @transparent;
+
+}
+
+/* Panel izquierdo
+GeditPanel 
+GeditDocumentsPanel 
+*/
+
+GeditWindow .notebook tab,
+EphyNotebook.notebook tab {
+	padding: 2px 4px;
+
+    border-width: 0px 1px 1px 1px;
+    border-style: solid; 
+	border-radius: 0px;
+
+    -unico-border-gradient: -gtk-gradient (linear,
+                                             left top, left bottom,
+                                             from (shade(@notebook_border, 0.75)),
+                                             to (shade(@notebook_border, 0.75)));
+
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade (@bg_color, 0.73)),
+			 		 color-stop (0.15, shade (@bg_color, 0.81) ),
+			         to (shade (@bg_color, 0.82)));
+
+	-unico-outer-stroke-width: 0px;
+	-unico-inner-stroke-width: 		0px 1px 1px 1px;
+    -unico-inner-stroke-gradient: 	-gtk-gradient (linear,
+				                                   left top, left bottom,
+				                                   from (alpha(#000, 0.05)),
+				                                   to   (alpha(#000, 0.05)));
+
+}
+
+GeditWindow .notebook tab:active,
+EphyNotebook.notebook tab:active {
+
+	-unico-border-gradient: none;
+
+	border-top-color: 		shade(@theme_bg_color, 0.92);
+	border-left-color: 		shade(@notebook_border, 0.85);
+	border-bottom-color: 	shade(@notebook_border, 0.85);
+	border-right-color: 	shade(@notebook_border, 0.85);
+
+
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.94)),
+									 color-stop (0.97, shade(@theme_bg_color, 0.90)),
+									 color-stop (0.97, shade(@notebook_border, 0.70)),
+                                     to (shade(@notebook_border, 0.70)));
+	-unico-inner-stroke-width: 0px;
+	-unico-outer-stroke-width: 0px;
+
+}
+
+
+TerminalWindow .notebook tab:first-child,
+NautilusWindow .notebook tab:first-child,
+TerminalWindow .notebook tab:first-child:active,
+NautilusWindow .notebook tab:first-child:active,
+GeditWindow .notebook tab:first-child,
+EphyNotebook.notebook tab:first-child {
+	border-left-width: 0px;
+    border-radius: 0px;
+}
+
+TerminalWindow .notebook tab:last-child,
+NautilusWindow .notebook tab:last-child,
+
+GeditWindow .notebook tab:last-child,
+EphyNotebook.notebook tab:last-child {
+    border-radius: 0px;
+}
+
+TerminalWindow .notebook tab:last-child,
+NautilusWindow .notebook tab:last-child,
+TerminalWindow .notebook tab:last-child:active,
+NautilusWindow .notebook tab:last-child:active {
+	border-right-width: 0px;
+}
+
+TerminalWindow .notebook tab:only-child, 
+NautilusWindow .notebook tab:only-child,
+GeditWindow .notebook tab:only-child,
+EphyNotebook.notebook tab:only-child {
+    border-radius: 0px;
+}
+
+NautilusWindow .notebook tab.top {
+    padding: 0px 5px 0px 5px;
+}
+
+NautilusWindow .notebook tab GtkLabel,
+TerminalWindow .notebook tab GtkLabel,
+EphyNotebook.notebook tab GtkLabel,
+GeditWindow .notebook tab GtkLabel {
+	padding: 0px;
+	color: @theme_fg_color; 
+	text-shadow: 1 1 alpha(#fff, 0.20);
+
+}
+
+GeditWindow .primary-toolbar .toolbar,
+GeditWindow .primary-toolbar.toolbar,
+EphyToolbar.toolbar.menubar {
+	/* Quitar linea inferior toolbar para integrar tabs tipo safari */
+    border-width: 0 0 1px 0;
+    border-style: solid; 
+	border-radius: 0px;
+    -unico-border-gradient: -gtk-gradient (linear,
+                                             left top, left bottom,
+                                             from (shade (@theme_bg_color, 0.70)),
+                                             to   (shade (@theme_bg_color, 0.70)));
+
+}
+
+GeditWindow .primary-toolbar .toolbar,
+GeditWindow .primary-toolbar.toolbar {
+	-unico-inner-stroke-width: 		0px 0px 1px 0px;
+    -unico-inner-stroke-gradient: 	-gtk-gradient (linear,
+				                                   left top, left bottom,
+				                                   from (alpha(#fff, 0.20)),
+				                                   to   (alpha(#fff, 0.20)));
+}
+
+EphyToolbar.toolbar .button {
+    /* padding-left: 4px;
+    padding-right: 4px; */
+}
+

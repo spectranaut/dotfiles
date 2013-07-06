@@ -1,0 +1,50 @@
+
+TerminalWindow .notebook tab {
+	padding: 4px;
+
+    border-width: 1px 1px 1px 1px;
+    border-style: solid; 
+	border-radius: 0px;
+
+    -unico-border-gradient: -gtk-gradient (linear,
+                                             left top, left bottom,
+                                             from (shade(@notebook_border, 0.75)),
+                                             to (shade(@notebook_border, 0.75)));
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade (@bg_color, 0.68)),
+			 		 color-stop (0.15, shade (@bg_color, 0.76) ),
+			         to (shade (@bg_color, 0.77)));
+
+	-unico-inner-stroke-width: 		1px 1px 1px 1px;
+    -unico-inner-stroke-gradient: 	-gtk-gradient (linear,
+				                                   left top, left bottom,
+				                                   from (alpha(#000, 0.06)),
+				                                   to   (alpha(#000, 0.06)));
+
+}
+
+
+TerminalWindow .notebook tab:active {
+ 	border-width: 1px;
+	border-style: solid; 
+
+	-unico-border-gradient: none;
+
+	border-top-color: 		shade(@theme_bg_color, 0.77);
+	border-left-color: 		shade(@notebook_border, 0.70);
+	border-bottom-color: 	shade(@notebook_border, 0.70);
+	border-right-color: 	shade(@notebook_border, 0.70);
+
+
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.92)),
+									 color-stop (0.97, shade(@theme_bg_color, 0.88)),
+									 color-stop (0.97, shade(@notebook_border, 0.70)),
+                                     to (shade(@notebook_border, 0.70)));
+	-unico-inner-stroke-width: 0px;
+	-unico-outer-stroke-width: 0px;
+
+}
+
