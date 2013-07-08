@@ -1,12 +1,17 @@
 #!/bin/bash
 
-# run as sudo, AND run in proper git directory
+# NOTE: run as sudo, AND run in proper git directory
 
 # install gnome
 apt-get install ubuntu-gnome-desktop ubuntu-gnome-default-settings
 dpkg-reconfigure gdm
 apt-get install gnome-documents gnome-boxes
 add-apt-repository ppa:gnome3-team/gnome3
+
+# copy .themes !! (From Dhaval)
+mdkir ~/.themes
+cp -r .themes/* ~/.themes 
+# set GTK+ theme: Blapple, and Window theme: AnimaNera
 
 # change basic file structure
 rm -r Desktop Pictures Downloads Documents Videos
@@ -30,6 +35,10 @@ cp ../.emacs ~/
 sudo apt-get purge -y empathy thunderbird software-center brasero gnome-contacts totem rhythmbox
 apt-get update
 
+# turn off notifications from network manage
+gconftool-2 -s /apps/nm-applet/disable-connected-notifications -t bool true
+gconftool-2 -s /apps/nm-applet/disable-disconnected-notifications -t bool true
+
 ## keyboard shortcuts DCONF EDITOR
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super><Shift>Down']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super><Shift>Up']"
@@ -38,6 +47,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Alt><Shi
 # gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']" # keep?
 # use some xmonad shortcuts?
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super><Shift>C']"
+gsettings set org.gnome.shell.overrides button-layout "close,maxmize,minimize:menu"
 
 # note, defaults: 
 #   ['<Alt>Tab'] switches between applications --really cool!

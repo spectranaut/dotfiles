@@ -108,5 +108,4 @@ fi
 
 alias emacs='emacs -nw'
 
-
-
+export PS1="[\u@\h \W]\$ "
